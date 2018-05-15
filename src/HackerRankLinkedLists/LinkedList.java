@@ -1,8 +1,8 @@
 package HackerRankLinkedLists;
 
-public class LinkedList {
+public class LinkedList<D> {
     // Properties
-    Node head;
+    Node<D> head;
     int count;
 
     // Constructor
@@ -11,16 +11,16 @@ public class LinkedList {
 //        count = 0;
 //    }
 
-    public LinkedList(Node newNode) {
+    public LinkedList() {
         head = newNode;
         count = 1;
     }
 
     // Methods
     /** add, get, size, isEmpty, remove **/
-    public void add(int newData) {
-        Node temp = new Node(newData);
-        Node current = head;
+    public void add(D newData) {
+        Node<D> temp = new Node(newData);
+        Node<D> current = head;
 
         while(current.getNext() != null) {
             current = current.getNext();
@@ -29,11 +29,11 @@ public class LinkedList {
         count++;
     }
 
-    public int get(int index) {
-        if(index == 0) {
-            return -1;
-        }
-        Node current = head;
+    public D get(int index) {
+//        if(index == 0) {
+//            return -1;
+//        }
+        Node<D> current = head;
         for(int ii = 1; ii < index; ii++) {
             current = current.getNext();
         }
@@ -50,7 +50,7 @@ public class LinkedList {
 
     public void remove() {
         // removing from back of the list
-        Node current = head;
+        Node<D> current = head;
         while(current.getNext() != null ) {
             current = current.getNext();
         }
@@ -59,6 +59,10 @@ public class LinkedList {
     }
 
     public static void main(String[] args) {
-
+        LinkedList<String> linkedList = new LinkedList<String>();
+        linkedList.add("Alice");
+        System.out.println((linkedList));
+        linkedList.add("Alicey");
+        System.out.println(linkedList);
     }
 }

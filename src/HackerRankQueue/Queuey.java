@@ -2,9 +2,10 @@ package HackerRankQueue;
 
 import java.util.LinkedList;
 
-public class Queuey {
+// Added Generic of type <D>
+public class Queuey<D> {
 
-    LinkedList queue = new LinkedList();
+    LinkedList<D>queue;
 
     // Making a queue instance.
     public Queuey() {
@@ -22,26 +23,26 @@ public class Queuey {
     }
 
     // Enqueue an item.
-    public void enqueue(int n) {
+    public void enqueue(D n) {
         queue.addLast(n);
     }
 
     // Dequeue an item.
-    public int dequeue() {
-        return (int) queue.remove(0);
+    public D dequeue() {
+        return queue.remove(0);
     }
 
     // Peek at the first item.
-    public int peek() {
-        return (int) queue.get(0);
+    public D peek() {
+        return queue.get(0);
     }
 
-    public void push(int n) {
+    public void push(D n) {
         queue.push(n);
     }
 
-    public int pop() {
-        return (int) queue.pop();
+    public D pop() {
+        return queue.pop();
     }
 
     public static void main(String[] args) {
