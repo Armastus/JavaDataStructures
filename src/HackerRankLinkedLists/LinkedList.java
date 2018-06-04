@@ -11,10 +11,10 @@ public class LinkedList<D> {
 //        count = 0;
 //    }
 
-    public LinkedList() {
-        head = newNode;
-        count = 1;
-    }
+//    public LinkedList() {
+//        head = newNode;
+//        count = 1;
+//    }
 
     // Methods
     /** add, get, size, isEmpty, remove **/
