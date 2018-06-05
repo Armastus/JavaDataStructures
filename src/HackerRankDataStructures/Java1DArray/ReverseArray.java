@@ -1,4 +1,4 @@
-package HackerRankDataStructures;
+package HackerRankDataStructures.Java1DArray;
 
 import java.io.*;
 import java.math.*;
