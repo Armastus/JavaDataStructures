@@ -9,35 +9,40 @@ public class Solution {
 
     public static void main(String[] args) {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
-        ArrayList<Integer> arrRow = new ArrayList<Integer>();
-        ArrayList<Integer> arrColumn = new ArrayList<Integer>();
+        ArrayList<Integer> arrRow = new ArrayList<>();
         int n = scanner.nextInt();
-        int d = scanner.nextInt();
-        int q = scanner.nextInt();
-        // System.out.print(d);
-        for (int ii = 1; ii <= n; ii++) {
-            arrColumn.add(ii);
+        ArrayList<Integer>[] arrColumn = new ArrayList[n];
+        for (int ii = 0; ii < n; ii++) {
+            int d = scanner.nextInt();
+            // System.out.print(d + " ");
             for (int yy = 0; yy < d; yy++) {
-                int num = scanner.nextInt();
-                // d[yy] = scanner.nextInt();
-                arrRow.add(num);
+                Integer[] dsIntegers = new Integer[d];
+                dsIntegers[yy] = scanner.nextInt();
+                arrRow.add(dsIntegers[yy]);
                 // System.out.print(arrRow.get(yy) + " ");
-                // System.out.println(arrRow.get(0) + " ");
+            }
+            arrColumn[ii] = new ArrayList<>(arrRow);
+            // System.out.print(arrColumn[ii]);
+            arrRow.clear();
+            // System.out.println();
+        }
+        // System.out.print(arrColumn[]);
+        // System.out.println();
+
+        int numOfQueries = scanner.nextInt();
+        // System.out.print(numOfQueries);
+
+        for (int zz = 0; zz < numOfQueries; zz++) {
+            int xCord = scanner.nextInt() - 1;
+            int yCord = scanner.nextInt() - 1;
+
+            try
+            {
+                System.out.println(arrColumn[xCord].get(yCord));
+            }catch (IndexOutOfBoundsException error) {
+                System.out.println("ERROR!");
             }
         }
-        // System.out.print(arrRow.size());
-        for(int zz = 0; zz < q; zz++) {
-            int x = scanner.nextInt();
-            int y = scanner.nextInt();
-
-            arrRow.get(x);
-            // System.out.print(y);
-            // System.out.print(arrRow.get(x));
-            // System.out.print(arrRow.get(y));
-            // System.out.print(q);
-        }
-        // for (int zz = 0; zz < arrList.size(); zz++) {
-        //     System.out.print(arrList.get(zz));
-        // }
+        scanner.close();
     }
 }
