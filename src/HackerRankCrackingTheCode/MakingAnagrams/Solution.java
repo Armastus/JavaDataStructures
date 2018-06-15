@@ -14,13 +14,9 @@ public class Solution {
 
     public static void main(String[] args) {
         HashMap<Character, Integer> anagramA = new HashMap<Character, Integer>();
-
         HashMap<Character, Integer> anagramB = new HashMap<Character, Integer>();
-
-        String a = scanner.nextLine();
-
-        String b = scanner.nextLine();
-
+        String a = "fcrxzwscanmligyxyvym";
+        String b = "jxwtrhvujlmrpdoqbisbwhmgpmeoke";
         int counter = 0;
 
         for (int ii = 0; ii < a.length(); ii++) {
@@ -30,54 +26,76 @@ public class Solution {
             } else {
                 anagramA.put(key, anagramA.get(key) + 1);
             }
-            // System.out.println(key);
         }
 
         System.out.print(anagramA);
 
         for (int yy = 0; yy < b.length(); yy++) {
             Character key = b.charAt(yy);
-            if (!anagramB.containsKey(key)) {
-                anagramB.put(key, 1);
+            if (!anagramA.containsKey(key)) {
+                counter++;
             } else {
-                anagramB.put(key, anagramB.get(key) + 1);
+                anagramA.put(key, anagramA.get(key) - 1);
             }
-            // System.out.println(key);
         }
 
         System.out.println();
-        System.out.print(anagramB);
+        System.out.print(anagramA);
+        System.out.println();
 
-        Iterator entriesA = anagramA.entrySet().iterator();
-        Iterator entriesB = anagramB.entrySet().iterator();
+        for (Map.Entry<Character, Integer> entry : anagramA.entrySet()) {
+            if (entry.getValue() != 0) {
+                counter+=Math.abs(entry.getValue());
+            }
+        }
 
-        // while (entriesA.hasNext()) {
-        //     Map.Entry entry = (Map.Entry) entriesA.next();
+/** Next 2 for loops just create hashmap of second string **/
+//        for (int ii = 0; ii < b.length(); ii++) {
+//            Character key = b.charAt(ii);
+//            if (!anagramB.containsKey(key)) {
+//                anagramB.put(key, 1);
+//            } else {
+//                anagramB.put(key, anagramB.get(key) + 1);
+//            }
+//        }
+//
+//        System.out.print(anagramB);
+//
+//        for (int yy = 0; yy < a.length(); yy++) {
+//            Character key = a.charAt(yy);
+//            if (!anagramB.containsKey(key)) {
+//                counter++;
+//            } else {
+//                anagramB.put(key, anagramB.get(key) * 0);
+//            }
+//        }
+//
+//        System.out.println();
+//        System.out.print(anagramB);
+
+
+        /** Iterator Example **/
+//        Iterator iteratorA = anagramA.entrySet().iterator();
+//        Iterator iteratorB = anagramB.entrySet().iterator();
+
+
+        /** Map.Entry Example **/
+        // while (iteratorA.hasNext()) {
+        //     Map.Entry entry = (Map.Entry) iteratorA.next();
         //     Character key = (Character)entry.getKey();
         //     Integer value = (Integer)entry.getValue();
         //     System.out.println("Key = " + key + ", Value = " + value);
         // }
 
-        // while (entriesB.hasNext()) {
-        //     Map.Entry entry = (Map.Entry) entriesB.next();
+        // while (iteratorB.hasNext()) {
+        //     Map.Entry entry = (Map.Entry) iteratorB.next();
         //     Character key = (Character)entry.getKey();
         //     Integer value = (Integer)entry.getValue();
         //     System.out.println("Key = " + key + ", Value = " + value);
         // }
 
-        for (Character zz : anagramA.keySet()) {
-            // System.out.print(zz);
-            // System.out.print(anagramB.keySet());
-            Map.Entry entryB = (Map.Entry) entriesB.next();
-            // System.out.print(entryB.getKey());
-            if (zz.equals(entryB.getKey())) {
-                // System.out.print(zz);
-                System.out.print(entryB.getKey());
-            }
-        }
-
         System.out.println();
-        System.out.print(anagramB);
+        System.out.println(counter);
 
         scanner.close();
     }
