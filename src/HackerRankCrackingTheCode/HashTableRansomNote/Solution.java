@@ -16,6 +16,7 @@ public class Solution {
         Hashtable<String, Integer> noteHT = new Hashtable();
         int minLength = 0;
         int maxLength = 0;
+        String ransomNote = "";
 //        int count = 1;
 
         for (String ii : magazine) {
@@ -43,11 +44,11 @@ public class Solution {
         System.out.println();
 
         /** example **/
-        for (Map.Entry magEntry : magHT.entrySet()) {
-            System.out.println(magEntry);
-            System.out.println(magEntry.getKey());
-            System.out.println(magEntry.getValue());
-        }
+//        for (Map.Entry magEntry : magHT.entrySet()) {
+//            System.out.println(magEntry);
+//            System.out.println(magEntry.getKey());
+//            System.out.println(magEntry.getValue());
+//        }
 
         /** auto generated of the Map.Entry. kinda cool :) **/
 //        Map.Entry magEntry = new Map.Entry() {
@@ -67,12 +68,27 @@ public class Solution {
 //            }
 //        }
 
+//        Iterator<Map.Entry<String, Integer>> itrMag = magHT.entrySet().iterator();
+//        Iterator<Map.Entry<String, Integer>> itrNote = noteHT.entrySet().iterator();
+
+
         minLength = Math.min(magHT.size(), noteHT.size());
         maxLength = Math.max(magHT.size(), noteHT.size());
 
-        for (int xx = 0; xx < minLength; xx++) {
-
+        for (Map.Entry noteEntry : noteHT.entrySet()) {
+//            System.out.println(magEntry);
+//            System.out.println(magEntry.getKey());
+//            System.out.println(magEntry.getValue());
+            for (Map.Entry magEntry : magHT.entrySet()) {
+                if (noteEntry.getValue() == magEntry.getValue() && noteEntry.getKey() == magEntry.getKey()) {
+                    System.out.print(magEntry);
+//                    ransomNote = "Yes";
+                } else {
+//                    ransomNote = "No";
+                }
+            }
         }
+        System.out.print(ransomNote);
     }
 
 //    private static final Scanner scanner = new Scanner(System.in);
