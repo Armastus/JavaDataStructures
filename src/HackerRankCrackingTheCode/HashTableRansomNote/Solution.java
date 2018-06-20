@@ -1,12 +1,6 @@
 package HackerRankCrackingTheCode.HashTableRansomNote;
 
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
 
 public class Solution {
 
@@ -14,10 +8,7 @@ public class Solution {
     static void checkMagazine(String[] magazine, String[] note) {
         Hashtable<String, Integer> magHT = new Hashtable();
         Hashtable<String, Integer> noteHT = new Hashtable();
-        int minLength = 0;
-        int maxLength = 0;
-        String ransomNote = "";
-//        int count = 1;
+        Hashtable<String, Integer> tempHT = new Hashtable();
 
         for (String ii : magazine) {
             // System.out.print(ii + " ");
@@ -29,8 +20,9 @@ public class Solution {
                 magHT.put(ii, magHT.get(ii) + 1);
             }
         }
-        System.out.print(magHT);
-        System.out.println();
+
+//        System.out.print(magHT);
+//        System.out.println();
 
         for (String yy : note) {
             // System.out.print(yy + " ");
@@ -40,8 +32,9 @@ public class Solution {
                 noteHT.put(yy, noteHT.get(yy) + 1);
             }
         }
-        System.out.print(noteHT);
-        System.out.println();
+
+//        System.out.print(noteHT);
+//        System.out.println();
 
         /** example **/
 //        for (Map.Entry magEntry : magHT.entrySet()) {
@@ -68,27 +61,27 @@ public class Solution {
 //            }
 //        }
 
+        /** Iterator Example **/
 //        Iterator<Map.Entry<String, Integer>> itrMag = magHT.entrySet().iterator();
 //        Iterator<Map.Entry<String, Integer>> itrNote = noteHT.entrySet().iterator();
 
 
-        minLength = Math.min(magHT.size(), noteHT.size());
-        maxLength = Math.max(magHT.size(), noteHT.size());
+
+
 
         for (Map.Entry noteEntry : noteHT.entrySet()) {
-//            System.out.println(magEntry);
-//            System.out.println(magEntry.getKey());
-//            System.out.println(magEntry.getValue());
-            for (Map.Entry magEntry : magHT.entrySet()) {
-                if (noteEntry.getValue() == magEntry.getValue() && noteEntry.getKey() == magEntry.getKey()) {
-                    System.out.print(magEntry);
-//                    ransomNote = "Yes";
-                } else {
-//                    ransomNote = "No";
-                }
+            if (noteEntry.getValue() != null && magHT.get(noteEntry.getKey()) != null && noteEntry.getValue().equals(magHT.get(noteEntry.getKey()))) {
+                tempHT.put((String) noteEntry.getKey(), (Integer)noteEntry.getValue());
             }
         }
-        System.out.print(ransomNote);
+
+//        System.out.print(tempHT);
+
+        if (noteHT.equals(tempHT)) {
+            System.out.print("Yes");
+        } else {
+            System.out.print("No");
+        }
     }
 
 //    private static final Scanner scanner = new Scanner(System.in);
@@ -102,7 +95,7 @@ public class Solution {
 
         String[] magazine = new String[m];
 
-        String[] magazineItems = {"give", "me", "one", "today", "today", "night"};
+        String[] magazineItems = {"give", "me", "one", "grand", "today", "night"};
 //        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
         for (int i = 0; i < m; i++) {
