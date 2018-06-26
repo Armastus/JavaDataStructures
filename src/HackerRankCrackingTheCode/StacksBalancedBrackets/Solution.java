@@ -37,12 +37,14 @@ public class Solution {
     }
 
     private static void balancedBracketStack(String str) {
-
+        Stack theStack = new Stack(str.length());
         String balance = "YES";
-        int halfStr = Math.round(str.length() / 2);
 
         for (int ii = 0; ii < str.length(); ii++) {
-
+            theStack.push(str.charAt(ii));
+            if (theStack.peak() == '(' ||
+                    theStack.peak() == '[' ||
+                    theStack.peak() == '{' && )
         }
         System.out.println(balance);
     }
