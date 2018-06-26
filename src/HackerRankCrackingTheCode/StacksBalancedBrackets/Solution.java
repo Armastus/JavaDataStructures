@@ -36,21 +36,55 @@ public class Solution {
         System.out.println(balance);
     }
 
+    private static void balancedBracketStack(String str) {
+
+        String balance = "YES";
+        int halfStr = Math.round(str.length() / 2);
+
+        for (int ii = 0; ii < str.length(); ii++) {
+
+        }
+        System.out.println(balance);
+    }
+
 //    private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        String expression = "{{[[(())}}}}";
-        int arrLength = expression.length();
-        Stack theStack = new Stack(arrLength);
+        String balanced = "{{[[(())]]}}";
+        String unbalanced = "{[(])}";
+        String bracketBalanced = "({(){}[]})[]";
 
-        for (int ii = 0; ii < arrLength; ii++) {
-            theStack.push(expression.charAt(ii));
-            System.out.print(theStack.peak());
+        int balancedLength = balanced.length();
+        Stack balancedStack = new Stack(balancedLength);
+
+        int unbalancedLength = unbalanced.length();
+        Stack unbalancedStack = new Stack(unbalancedLength);
+
+        int bracketBalancedLength = bracketBalanced.length();
+        Stack bracketBalancedStack = new Stack(bracketBalancedLength);
+
+        for (int ii = 0; ii < balancedLength; ii++) {
+//            balancedStack.push(balanced.charAt(ii));
+//            System.out.print(balancedStack.peak());
         }
 
-        balancedStack(expression);
+        balancedStack(balanced);
 
-//        System.out.print(theStack);
+        for (int yy = 0; yy < unbalancedLength; yy++) {
+//            unbalancedStack.push(unbalanced.charAt(yy));
+//            System.out.print(unbalancedStack.peak());
+        }
+
+        balancedStack(unbalanced);
+
+        for (int xx = 0; xx < bracketBalancedLength; xx++) {
+//            bracketBalancedStack.push(bracketBalanced.charAt(xx));
+//            System.out.print(bracketBalancedStack.peak());
+        }
+
+        balancedBracketStack(bracketBalanced);
+
+//        System.out.print(balancedStack);
 //        int t = 3;
 //        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
