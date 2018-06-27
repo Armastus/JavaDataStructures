@@ -37,37 +37,36 @@ public class Solution {
     }
 
     private static void balancedBracketStack(String str) {
-        public static boolean isBalanced(String expression) {
+        Stack theStack = new Stack(str.length());
+        String balance = "YES";
 
-            Stack<Character> stack = new Stack<>();
-
-            for(char c : expression.toCharArray()){
+            for(char c : str.toCharArray()){
                 switch (c){
                     case '{':
                     case '[':
                     case '(':
-                        stack.push(c);
+                        theStack.push(c);
                         break;
                     case '}':
-                        if (stack.isEmpty() || stack.pop() != '{')
-                            return false;
+                        if (theStack.isEmpty() || theStack.pop() != '{')
+                            balance = "NO";
                         break;
                     case ']':
-                        if (stack.isEmpty() || stack.pop() != '[')
-                            return false;
+                        if (theStack.isEmpty() || theStack.pop() != '[')
+                            balance = "NO";
                         break;
                     case ')':
-                        if (stack.isEmpty() || stack.pop() != '(')
-                            return false;
+                        if (theStack.isEmpty() || theStack.pop() != '(')
+                            balance = "NO";
                         break;
-                }// end switch
-            }// end for
+                }
+            }
 
-            if (!stack.isEmpty())
-                return false;
+            if (!theStack.isEmpty()) {
+                balance = "NO";
+            }
 
-            return true;
-        }
+            System.out.print(balance);
     }
 
 //    private static final Scanner scanner = new Scanner(System.in);
