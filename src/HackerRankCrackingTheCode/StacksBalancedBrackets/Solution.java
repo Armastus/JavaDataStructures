@@ -37,16 +37,37 @@ public class Solution {
     }
 
     private static void balancedBracketStack(String str) {
-        Stack theStack = new Stack(str.length());
-        String balance = "YES";
+        public static boolean isBalanced(String expression) {
 
-        for (int ii = 0; ii < str.length(); ii++) {
-            theStack.push(str.charAt(ii));
-            if (theStack.peak() == '(' ||
-                    theStack.peak() == '[' ||
-                    theStack.peak() == '{' && )
+            Stack<Character> stack = new Stack<>();
+
+            for(char c : expression.toCharArray()){
+                switch (c){
+                    case '{':
+                    case '[':
+                    case '(':
+                        stack.push(c);
+                        break;
+                    case '}':
+                        if (stack.isEmpty() || stack.pop() != '{')
+                            return false;
+                        break;
+                    case ']':
+                        if (stack.isEmpty() || stack.pop() != '[')
+                            return false;
+                        break;
+                    case ')':
+                        if (stack.isEmpty() || stack.pop() != '(')
+                            return false;
+                        break;
+                }// end switch
+            }// end for
+
+            if (!stack.isEmpty())
+                return false;
+
+            return true;
         }
-        System.out.println(balance);
     }
 
 //    private static final Scanner scanner = new Scanner(System.in);
@@ -70,18 +91,18 @@ public class Solution {
 //            System.out.print(balancedStack.peak());
         }
 
-        balancedStack(balanced);
+//        balancedStack(balanced);
 
         for (int yy = 0; yy < unbalancedLength; yy++) {
 //            unbalancedStack.push(unbalanced.charAt(yy));
 //            System.out.print(unbalancedStack.peak());
         }
 
-        balancedStack(unbalanced);
+//        balancedStack(unbalanced);
 
         for (int xx = 0; xx < bracketBalancedLength; xx++) {
-//            bracketBalancedStack.push(bracketBalanced.charAt(xx));
-//            System.out.print(bracketBalancedStack.peak());
+            bracketBalancedStack.push(bracketBalanced.charAt(xx));
+            System.out.print(bracketBalancedStack.peak());
         }
 
         balancedBracketStack(bracketBalanced);

@@ -24,6 +24,10 @@ public class Stack {
         return stackArray[top];
     }
 
+    public int size() {
+        return maxSize;
+    }
+
     public void push(char strChar) {
         if(isFull()) {
             System.out.println("Stack is full.");
