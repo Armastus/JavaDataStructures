@@ -5,12 +5,14 @@ import java.util.LinkedList;
 // Added Generic of type <D>
 public class Queuey<D> {
 
-    LinkedList<D>queue;
+    LinkedList<D>queue = new LinkedList();
 
     // Making a queue instance.
-    public Queuey() {
-        queue = new LinkedList();
-    }
+    /** This is our constructor which we could make if we want. **/
+//    public Queuey() {
+//        queue = new LinkedList();
+//    }
+    /****************************/
 
     // Is our queue empty.
     public boolean isEmpty() {

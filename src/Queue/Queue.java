@@ -47,7 +47,7 @@ public class Queue {
         return queueArray[front];
     }
 
-    /** Return if our queueu isEmpty **/
+    /** Return if our queue isEmpty **/
     public boolean isEmpty() {
         return (numItems == 0);
     }
