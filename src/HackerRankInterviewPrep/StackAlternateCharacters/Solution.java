@@ -1,34 +1,29 @@
 package HackerRankInterviewPrep.StackAlternateCharacters;
 
-import Stack.Stack;
+import java.util.Stack;
 
 public class Solution {
     static int alternatingCharacters(String s) {
-        Stack theStack = new Stack(s.length());
+        Stack theStack = new Stack();
         int counter = 0;
 
         for (char c : s.toCharArray()) {
             switch (c) {
                 case 'A':
                 case 'B':
-                    if (theStack.isEmpty()) {
-                        theStack.push(c);
-                        break;
+                    if (!theStack.isEmpty()) {
+                        if (theStack.peek() == (Object)'A' && c == 'A' || theStack.peek() == (Object)'B' && c == 'B') {
+                            theStack.pop();
+                            counter++;
+                        }
                     }
-                    if (theStack.peak() == 'A' && s.charAt(c) == 'A' || theStack.peak() == 'B' && s.charAt(c) == 'B') {
-                        counter++;
-                        break;
-                    } else {
-                        theStack.push(c);
-                        break;
-                    }
+                    theStack.push(c);
             }
         }
-
         return counter;
     }
 
     public static void main(String[] args) {
-        alternatingCharacters("AABABAAABB");
+        System.out.print(alternatingCharacters("AABABAAABB"));
     }
 }

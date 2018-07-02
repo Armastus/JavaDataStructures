@@ -59,7 +59,7 @@ public class StackReverseString {
         }
     }
 
-    /** peak method
+    /** peek method
      * This just return the item that is on top of the stack. **/
     public char peak() {
         return stackArray[top];

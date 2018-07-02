@@ -21,7 +21,7 @@ public class Solution {
                 if (theStack.peak() == '(' && str.charAt(ii) == ')' ||
                         theStack.peak() == '[' && str.charAt(ii) == ']' ||
                         theStack.peak() == '{' && str.charAt(ii) == '}') {
-//                    System.out.print(theStack.peak());
+//                    System.out.print(theStack.peek());
                     theStack.pop();
                     count++;
                 } else {
@@ -87,14 +87,14 @@ public class Solution {
 
         for (int ii = 0; ii < balancedLength; ii++) {
 //            balancedStack.push(balanced.charAt(ii));
-//            System.out.print(balancedStack.peak());
+//            System.out.print(balancedStack.peek());
         }
 
 //        balancedStack(balanced);
 
         for (int yy = 0; yy < unbalancedLength; yy++) {
 //            unbalancedStack.push(unbalanced.charAt(yy));
-//            System.out.print(unbalancedStack.peak());
+//            System.out.print(unbalancedStack.peek());
         }
 
 //        balancedStack(unbalanced);

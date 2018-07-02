@@ -59,9 +59,9 @@ public class Stack {
         }
     }
 
-    /** peak method
+    /** peek method
      * This just return the item that is on top of the stack. **/
-    public long peak() {
+    public long peek() {
         return stackArray[top];
     }
 
