@@ -7,5 +7,9 @@ public class Solution {
         node.insert(1);
         node.insert(7);
         node.insert(5);
+
+        System.out.println(node.contains(7));
+        System.out.println();
+        node.printInorder();
     }
 }
