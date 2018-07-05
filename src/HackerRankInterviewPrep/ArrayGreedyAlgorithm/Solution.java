@@ -21,7 +21,6 @@ public class Solution {
         }
         return min;
     }
-    private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         int[] arr = {-59, -36, -13, 1, -53, -92, -2, -96, -54, 75};
