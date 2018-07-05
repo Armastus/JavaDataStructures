@@ -20,7 +20,7 @@ public class Stack {
         return (top == -1);
     }
 
-    public char peak() {
+    public char peek() {
         return stackArray[top];
     }
 

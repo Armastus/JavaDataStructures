@@ -4,11 +4,9 @@ import java.util.*;
 
 public class Solution {
 
-    private static final Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) {
         HashMap<Character, Integer> anagramA = new HashMap<Character, Integer>();
-        HashMap<Character, Integer> anagramB = new HashMap<Character, Integer>();
+
         String a = "fcrxzwscanmligyxyvym";
         String b = "jxwtrhvujlmrpdoqbisbwhmgpmeoke";
         int counter = 0;
@@ -90,7 +88,5 @@ public class Solution {
 
         System.out.println();
         System.out.println(counter);
-
-        scanner.close();
     }
 }

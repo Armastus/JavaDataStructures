@@ -84,33 +84,19 @@ public class Solution {
         }
     }
 
-//    private static final Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) {
-//        String[] mn = scanner.nextLine().split(" ");
+        String[] magazineWords = {"give", "me", "one", "grand", "today", "night"};
+        String[] magazine = new String[magazineWords.length];
 
-        int m = 6;
-
-        int n = 4;
-
-        String[] magazine = new String[m];
-
-        String[] magazineItems = {"give", "me", "one", "grand", "today", "night"};
-//        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
-        for (int i = 0; i < m; i++) {
-            String magazineItem = magazineItems[i];
-            magazine[i] = magazineItem;
+        for (int i = 0; i < magazine.length; i++) {
+            magazine[i] = magazineWords[i];
         }
 
-        String[] note = new String[n];
+        String[] noteWords = {"give", "one", "grand", "today"};
+        String[] note = new String[noteWords.length];
 
-        String[] noteItems = {"give", "one", "grand", "today"};
-//        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
-        for (int i = 0; i < n; i++) {
-            String noteItem = noteItems[i];
-            note[i] = noteItem;
+        for (int i = 0; i < note.length; i++) {
+            note[i] = noteWords[i];
         }
 
         checkMagazine(magazine, note);
