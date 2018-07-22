@@ -1,13 +1,5 @@
 package HackerRankCrackingTheCode.StacksBalancedBrackets;
 
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
-
 public class Solution {
 
     private static void balancedStack(String str) {
@@ -18,9 +10,9 @@ public class Solution {
         Stack theStack = new Stack(halfStr);
         for (int ii = 0; ii < str.length(); ii++) {
             if (ii == count) {
-                if (theStack.peak() == '(' && str.charAt(ii) == ')' ||
-                        theStack.peak() == '[' && str.charAt(ii) == ']' ||
-                        theStack.peak() == '{' && str.charAt(ii) == '}') {
+                if (theStack.peek() == '(' && str.charAt(ii) == ')' ||
+                        theStack.peek() == '[' && str.charAt(ii) == ']' ||
+                        theStack.peek() == '{' && str.charAt(ii) == '}') {
 //                    System.out.print(theStack.peek());
                     theStack.pop();
                     count++;
@@ -101,7 +93,7 @@ public class Solution {
 
         for (int xx = 0; xx < bracketBalancedLength; xx++) {
             bracketBalancedStack.push(bracketBalanced.charAt(xx));
-            System.out.print(bracketBalancedStack.peak());
+            System.out.print(bracketBalancedStack.peek());
         }
 
         balancedBracketStack(bracketBalanced);
