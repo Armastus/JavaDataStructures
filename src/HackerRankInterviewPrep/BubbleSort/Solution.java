@@ -23,14 +23,14 @@ public class Solution {
             arrLength--;
         }
 
-//        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr));
         System.out.println("Array is sorted in " + counter + " swaps.");
         System.out.println("First Element: " + arr[0]);
         System.out.println("Last Element: " + arr[arr.length - 1]);
     }
 
     public static void main(String[] args) {
-        int[] blah = {3, 1, 2, 8, 4};
+        int[] blah = {4, 3, 2, 1, 5};
         bubbleSort(blah);
     }
 }
