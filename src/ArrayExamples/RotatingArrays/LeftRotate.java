@@ -5,7 +5,7 @@ package ArrayExamples.RotatingArrays;
 import java.util.*;
 import java.lang.*;
 import java.io.*;
-
+// a comment
 class arr_rot
 {
     // Function to leftRotate array multiple
